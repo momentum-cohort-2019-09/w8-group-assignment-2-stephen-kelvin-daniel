@@ -26,5 +26,5 @@ class CardAdmin(admin.ModelAdmin):
     )
 
 
-admin.site.register(Deck, DeckAdmin, )
+admin.site.register(Deck, DeckAdmin)
 admin.site.register(Card, CardAdmin)
