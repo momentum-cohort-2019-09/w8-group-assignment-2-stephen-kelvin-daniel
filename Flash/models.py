@@ -12,6 +12,12 @@ class Deck(models.Model):
         on_delete=models.CASCADE,
         related_name="decks",
     )
+    subject = models.CharField(
+        verbose_name="Subject Name",
+        max_length=50,
+        blank=False,
+        null=True,
+    )
     title = models.CharField(
         verbose_name="Deck Title",
         max_length=50,
@@ -26,6 +32,12 @@ class Deck(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
     )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+    )
+
+    def __str__(self):
+        return self.subject
 
     def __str__(self):
         return self.title
@@ -64,10 +76,12 @@ class Card(models.Model):
     created_at = models.DateTimeField(
         auto_now_add=True,
     )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+    )
 
     def __str__(self):
         return self.question
 
     def __str__(self):
         return self.answer
-
