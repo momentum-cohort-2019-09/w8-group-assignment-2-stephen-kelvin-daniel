@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def dashboard(request):
+    return render(request, 'Flash/dashboard.html')
+
+
+def testing(request):
+    return render(request, 'Flash/testing.html')

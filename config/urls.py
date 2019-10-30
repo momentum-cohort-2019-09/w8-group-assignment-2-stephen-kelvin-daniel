@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Flash import views
 
 urlpatterns = [
+    # path('', views.dashboard),
+    path('', views.testing),
     path('admin/', admin.site.urls),
 ]
