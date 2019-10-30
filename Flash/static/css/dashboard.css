@@ -12,9 +12,13 @@
     text-decoration: none;
 }
 
+body {
+    background-color: #495040;
+}
+
 .header_dashboard {
     background-color: #353534;
-    border-bottom: 5px groove rgb(38, 38, 38);
+    border-bottom: 10px groove rgb(41, 41, 41);
     padding-top: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -27,16 +31,29 @@ h2 {
     text-shadow: -3px 5px 4px black;
 }
 
+.main_body {
+    height: 100%;
+}
+
 .body_dashboard {
-    background-color: #3C4432;
+    background-color: #2c3124;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     flex-flow: wrap;
+    overflow-X: scroll;
+    height: 35rem;
     padding-top: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-top: 10px groove #23271f;
+    border-left: 10px groove #23271f;
+    border-right: 10px groove #5c684c;
+    border-bottom: 10px groove #5c684c;
 }
 
 .container_deck {
@@ -51,6 +68,8 @@ h2 {
 }
 
 .title_deck {
+    display: flex;
+    flex-direction: row;
     background-color: #f4f4f4;
     padding-top: 0.5rem;
     padding-left: 1rem;
@@ -59,43 +78,72 @@ h2 {
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    box-shadow: -6px 6px 6px black;
 }
 
 .body_deck {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     background-color: #f4f4f4;
     padding-top: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     padding-bottom: 0.5rem;
     height: 10rem;
     border-top: 0.5px solid rgba(255, 0, 0, 0.564);
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom: 1px solid black;
+    box-shadow: -6px 6px 6px black;
+}
+
+#container_button_add_deck {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    width: 23rem;
+    height: 12.5rem;
+    padding-top: 1.5rem;
 }
 
 .button_add_deck {
     border-radius: 100%;
     background-color: rgb(148, 177, 110);
-    width: 100px;
-    height: 100px;
-    border-top: 5px solid #D1E2BA;
-    border-right: 5px solid #D1E2BA;
-    border-left: 5px solid #677456;
-    border-bottom: 5px solid #677456;
+    width: 150px;
+    height: 150px;
+    border-top: 10px solid #D1E2BA;
+    border-right: 10px solid #D1E2BA;
+    border-left: 10px solid #677456;
+    border-bottom: 10px solid #677456;
+}
+
+.button_add_deck:hover {
+    cursor: pointer;
 }
 
 .button_add_deck:active {
     transform: scale(0.8);
     background-color: rgb(61, 75, 42);
     box-shadow: inset 0px 0px 10px 5px black;
-    border-top: 5px solid #778f56;
-    border-right: 5px solid #778f56;
-    border-left: 5px solid #5a6c42;
-    border-bottom: 5px solid #5a6c42;
+    border-top: 10px solid #647748;
+    border-right: 10px solid #647748;
+    border-left: 10px solid #445232;
+    border-bottom: 10px solid #445232;
 }
 
 .image_add_deck {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
+}
+
+.link_button_add {
+    /* background-color: yellow; */
+    height: 150px;
+    border-radius: 100rem;
 }

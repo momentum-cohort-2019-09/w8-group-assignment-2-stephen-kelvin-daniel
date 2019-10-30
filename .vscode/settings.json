@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "/Users/stephenkwan/.local/share/virtualenvs/w8-group-assignment-2-stephen-kelvin-danie-xMvj1wxS/bin/python"
+    "python.pythonPath": "/System/Library/Frameworks/Python.framework/Versions/2.7/Resources/Python.app/Contents/MacOS/Python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }
