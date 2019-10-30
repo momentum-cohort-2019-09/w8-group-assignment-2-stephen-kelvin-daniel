@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from Flash import views
 
 urlpatterns = [
+    path('', views.deck_list, name="deck_list"),
     path('admin/', admin.site.urls),
 ]
