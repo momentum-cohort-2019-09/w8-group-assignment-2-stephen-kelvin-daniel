@@ -128,3 +128,13 @@ STATIC_URL = '/static/'
 
 # Django-Project:
 AUTH_USER_MODEL = 'Flash.User'
+
+LOGIN_REDIRECT_URL = '/'
+
+# Registration
+
+ACCOUNT_ACTIVATION_DAYS = 7
+
+# Email
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -1,20 +1,6 @@
-{% load staticfiles %} {% extends 'base.html' %} {% block context %} {% endblock %}
+{% extends "base.html" %} 
 
-
-
-
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Dashboard</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
-</head>
-
-<body>
+{% block content %} 
     <div class="header_dashboard">
         <h1>Welcome [user_name]!</h1>
         <h2>This is the Dashboard</h2>
@@ -56,6 +42,6 @@
             <button class="button_add_deck"></button>
         </div>
     </div>
-</body>
 
-</html>
+{% endblock %}
+<!-- </html> -->
