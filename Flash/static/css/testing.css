@@ -21,14 +21,15 @@ body {
 }
 
 #body_front_card {
+    display: flex;
+    flex-direction: column;
     font-size: 2rem;
-    padding-top: 7rem;
 }
 
 #body_back_card {
-    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
     font-size: 2rem;
-    padding-top: 7rem;
 }
 
 label {

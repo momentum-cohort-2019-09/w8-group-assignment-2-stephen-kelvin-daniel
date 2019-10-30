@@ -18,7 +18,7 @@ from django.urls import path
 from Flash import views
 
 urlpatterns = [
-    # path('', views.dashboard),
+    path('', views.dashboard),
     path('', views.testing),
     path('admin/', admin.site.urls),
 ]
