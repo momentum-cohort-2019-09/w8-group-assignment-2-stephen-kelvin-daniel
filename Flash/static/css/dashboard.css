@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+* button:focus {
+    outline: none;
+}
+
+* a {
+    text-decoration: none;
+}
+
+.header_dashboard {
+    background-color: #353534;
+    border-bottom: 5px groove rgb(38, 38, 38);
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.header_dashboard h1,
+h2 {
+    color: white;
+    text-shadow: -3px 5px 4px black;
+}
+
+.body_dashboard {
+    background-color: #3C4432;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-flow: wrap;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.container_deck {
+    /* background-color: pink; */
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    width: 25rem;
+}
+
+.title_deck {
+    background-color: #f4f4f4;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.body_deck {
+    background-color: #f4f4f4;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    height: 10rem;
+    border-top: 0.5px solid rgba(255, 0, 0, 0.564);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.button_add_deck {
+    border-radius: 100%;
+    background-color: rgb(148, 177, 110);
+    width: 100px;
+    height: 100px;
+    border-top: 5px solid #D1E2BA;
+    border-right: 5px solid #D1E2BA;
+    border-left: 5px solid #677456;
+    border-bottom: 5px solid #677456;
+}
+
+.button_add_deck:active {
+    transform: scale(0.8);
+    background-color: rgb(61, 75, 42);
+    box-shadow: inset 0px 0px 10px 5px black;
+    border-top: 5px solid #778f56;
+    border-right: 5px solid #778f56;
+    border-left: 5px solid #5a6c42;
+    border-bottom: 5px solid #5a6c42;
+}
+
+.image_add_deck {
+    width: 100px;
+    height: 100px;
+}
