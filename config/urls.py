@@ -18,8 +18,9 @@ from django.urls import path, include
 from Flash import views
 
 urlpatterns = [
-    path('', views.dashboard),
     # path('', views.testing),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
+    path('dashboard/', views.dashboard, name="dashboard"),
+    path('', views.index_view),
 ]

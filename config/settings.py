@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Django Project:
-    'Flash'
+    'Flash',
     
     #Third-Parties:
+    'registration',
 
 ]
 
@@ -129,12 +130,11 @@ STATIC_URL = '/static/'
 # Django-Project:
 AUTH_USER_MODEL = 'Flash.User'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 # Registration
-
 ACCOUNT_ACTIVATION_DAYS = 7
-
+REGISTRATION_AUTO_LOGIN = True
 # Email
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
