@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
 from Flash import views
+from django.conf.urls import static 
 
 urlpatterns = [
-    path('', views.dashboard),
+    # path('admin/', admin.site.urls),
+    path('', views.edit_deck, name='edit_deck')
+    # path('', views.dashboard),
     # path('', views.testing),
-    path('admin/', admin.site.urls),
-    path('accounts/', include('registration.backends.simple.urls')),
+    # path('accounts/', include('registration.backends.simple.urls')),
 ]

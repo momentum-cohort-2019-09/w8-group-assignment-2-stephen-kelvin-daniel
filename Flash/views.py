@@ -1,9 +1,9 @@
 # from django.shortcuts import render
-
-
-
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+
+
+
 
 
 # Create your views here.
@@ -12,6 +12,9 @@ def testing(request):
 
 def dashboard(request):
     return render(request, 'Flash/dashboard.html')
+
+def edit_deck(request):
+    return render(request, 'Flash/edit_deck.html')    
 
 # @ login_required
 # def index_views(request):

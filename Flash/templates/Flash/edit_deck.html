@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+<h1>Edit deck</h1>
+
+<body>
+    {% csrf_token %}
+    <form>
+        Deck name:<br>
+        <input type="text" name="deckname" value=" ">
+        <br> Question:
+        <br>
+        <input type="text" name="Question" value=" ">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+
+
+</body>
+{% endblock %}
