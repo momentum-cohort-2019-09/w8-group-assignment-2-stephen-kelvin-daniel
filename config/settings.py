@@ -131,6 +131,7 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'Flash.User'
 
 LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Registration
 ACCOUNT_ACTIVATION_DAYS = 7

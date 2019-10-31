@@ -2,6 +2,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from Flash.models import User, Deck, Card
+
+@login_required
 def dashboard(request):
     all_decks = Deck.objects.all()
     return render(request, "Flash/dashboard.html", {
@@ -12,7 +14,6 @@ def dashboard(request):
 def testing(request):
     return render(request, 'Flash/testing.html')
 
-# @login_required
 # def dashboard(request):
 #     return render(request, 'Flash/dashboard.html')
 
