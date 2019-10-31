@@ -1,47 +1,27 @@
 {% extends "base.html" %} 
+{% load staticfiles %}
 
 {% block content %} 
+
     <div class="header_dashboard">
         <h1>Welcome {{ user }}!</h1>
         <h2>This is the Dashboard</h2>
     </div>
-    <div class="body_dashboard">
-        <div class="container_deck">
-            <div class="title_deck">
-                <h4>Deck Title</h4>
+        <div class="body_dashboard">
+            {% for deck in decks %}
+            <div class="container_deck">
+                <div class="title_deck">
+                    <div><h4>{{ deck.subject }}</h4></div>
+                </div>
+                <div class="body_deck">
+                    <div><h4>{{ deck.title }}</h4></div>
+                    <div><p>{{ deck.description }}</p></div>
+                </div>
             </div>
-            <div class="body_deck">
-                <p>Deck Description</p>
-            </div>
-        </div>
-        <div class="container_deck">
-            <div class="title_deck">
-                <h4>Deck Title</h4>
-            </div>
-            <div class="body_deck">
-                <p>Deck Description</p>
-            </div>
-        </div>
-        <div class="container_deck">
-            <div class="title_deck">
-                <h4>Deck Title</h4>
-            </div>
-            <div class="body_deck">
-                <p>Deck Description</p>
+            {% endfor %}
+            <div id="container_button_add_deck">
+                <a href="decks_add" class="link_button_add"><button class="button_add_deck">Later: make a template named "decks_add.html" to link this to</button></a>
             </div>
         </div>
-        <div class="container_deck">
-            <div class="title_deck">
-                <h4>Deck Title</h4>
-            </div>
-            <div class="body_deck">
-                <p>Deck Description</p>
-            </div>
-        </div>
-        <div class="container_button_add_deck">
-            <button class="button_add_deck"></button>
-        </div>
-    </div>
 
 {% endblock %}
-<!-- </html> -->
