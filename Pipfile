@@ -4,11 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-pylint = "*"
+pylint = "<2.0.0"
 autopep8 = "*"
 
 [packages]
 django = "*"
+django-registration-redux = "*"
 
 [requires]
 python_version = "3.7"

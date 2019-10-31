@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <a href="{% url 'dashboard' %}">I want my flashcards!</a>
+    <small class="is-size-7 has-text-grey">Not {{ user }}? <a href="{% url 'auth_logout' %}">Logout</a>.</small>
+{% else %}
+    <h1>Have an account?</h1>
+    <a href="{% url 'auth_login' %}">Login</a> | <a href="{% url 'registration_register' %}">Register</a>
+{% endif %}
+{% endblock %}

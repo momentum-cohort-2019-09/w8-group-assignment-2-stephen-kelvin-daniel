@@ -20,9 +20,13 @@ from Flash import views
 from django.conf.urls import static 
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+
     path('', views.edit_deck, name='edit_deck')
-    # path('', views.dashboard),
-    # path('', views.testing),
-    # path('accounts/', include('registration.backends.simple.urls')),
+
+    # path('', views.dashboard, name="dashboard"),
+    # path('', views.testing, name="testing"),
+    path('admin/', admin.site.urls),
+    path('accounts/', include('registration.backends.simple.urls')),
+    path('dashboard/', views.dashboard, name="dashboard"),
+    path('', views.index_view),
 ]
