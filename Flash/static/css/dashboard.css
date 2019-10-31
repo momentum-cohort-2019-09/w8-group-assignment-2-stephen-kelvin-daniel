@@ -65,7 +65,7 @@ h2 {
     justify-content: flex-start;
     flex-flow: wrap;
     overflow-X: scroll;
-    height: 27.1rem;
+    height: auto;
     padding-top: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -83,7 +83,7 @@ h2 {
 /*======================| Container around each Card |=============================================*/
 
 .container_deck {
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
     flex-direction: column;
     padding-top: 0.5rem;
