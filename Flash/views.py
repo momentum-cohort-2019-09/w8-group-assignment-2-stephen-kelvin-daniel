@@ -17,9 +17,17 @@ def testing(request):
 # def dashboard(request):
 #     return render(request, 'Flash/dashboard.html')
 
+
+def edit_deck(request):
+    return render(request, 'Flash/edit_deck.html')    
+
+# @ login_required
+# def index_views(request):
+
 def index_view(request):
     return render(request, "Flash/index.html")
 # def accounts_login(request):
+
 #     user = request.user
 #     return render(request, "Flash/index.html", {"user": user})
 
