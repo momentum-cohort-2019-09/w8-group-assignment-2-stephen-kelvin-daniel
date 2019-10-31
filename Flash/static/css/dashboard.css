@@ -1,20 +1,34 @@
+/*======================| Allowing each border and margin to reach the edge of the Viewpoet |======*/
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+
+/*======================| Disables gross green outline for all Buttons on Page |===================*/
+
 * button:focus {
     outline: none;
 }
+
+
+/*======================| Disables Hyperlinks having the blue underlined font |====================*/
 
 * a {
     text-decoration: none;
 }
 
+
+/*======================| Colors main Body of the Page |===========================================*/
+
 body {
     background-color: #495040;
 }
+
+
+/*======================| Title/Header of Main Dashboard |=========================================*/
 
 .header_dashboard {
     background-color: #353534;
@@ -25,15 +39,24 @@ body {
     padding-bottom: 0.5rem;
 }
 
+
+/*======================| Text in Header |=========================================================*/
+
 .header_dashboard h1,
 h2 {
     color: white;
     text-shadow: -3px 5px 4px black;
 }
 
+
+/*======================| Main Body of Page |======================================================*/
+
 .main_body {
     height: 100%;
 }
+
+
+/*======================| Section Containing Index Cards |=========================================*/
 
 .body_dashboard {
     background-color: #2c3124;
@@ -56,6 +79,9 @@ h2 {
     border-bottom: 10px groove #5c684c;
 }
 
+
+/*======================| Container around each Card |=============================================*/
+
 .container_deck {
     /* background-color: pink; */
     display: flex;
@@ -67,9 +93,13 @@ h2 {
     width: 25rem;
 }
 
+
+/*======================| Subject of each Deck |===================================================*/
+
 .title_deck {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     background-color: #f4f4f4;
     padding-top: 0.5rem;
     padding-left: 1rem;
@@ -80,6 +110,123 @@ h2 {
     border-right: 1px solid black;
     box-shadow: -6px 6px 6px black;
 }
+
+
+/*======================| Title Text in Deck Title |===============================================*/
+
+.title_deck h4 {
+    /* background-color: yellow; */
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+}
+
+
+/*======================| Container around all buttons in Deck Title |=============================*/
+
+.container_buttons_deck {
+    display: flex;
+    flex-direction: row;
+}
+
+
+/*======================| Container around individual Buttons of Deck Title |======================*/
+
+.container_button_deck {
+    /* background-color: pink; */
+    margin-left: 0.5rem;
+    height: 100%;
+    width: 2.5rem;
+}
+
+
+/*======================| Buttons of Deck Title |==================================================*/
+
+.button_edit_deck {
+    background-color: #5171ac;
+    padding: 0.5rem;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 100%;
+    border-top: 4px solid #74a1f5;
+    border-right: 4px solid #74a1f5;
+    border-left: 4px solid #3c5481;
+    border-bottom: 4px solid #3c5481;
+}
+
+.button_delete_deck {
+    background-color: #df4834;
+    padding: 0.5rem;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 100%;
+    border-top: 4px solid #f07a6b;
+    border-right: 4px solid #f07a6b;
+    border-left: 4px solid #88372c;
+    border-bottom: 4px solid #88372c;
+}
+
+
+/*======================| Reaction to hover over Buttons in Deck Title |===========================*/
+
+.button_edit_deck:hover {
+    background-color: #558cf3;
+    cursor: pointer;
+}
+
+.button_delete_deck:hover {
+    background-color: #f76956;
+    cursor: pointer;
+}
+
+
+/*======================| Reaction to Click over Buttons in Deck Title |===========================*/
+
+.button_edit_deck:active {
+    white-space: nowrap;
+    background-color: #293d61;
+    border-top: 4px solid #74a1f5;
+    border-right: 4px solid #74a1f5;
+    border-left: 4px solid #3c5481;
+    border-bottom: 4px solid #3c5481;
+    transform: scale(0.9);
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition: ease-in-out;
+    transition-property: all;
+    transition-duration: 20ms;
+}
+
+.button_delete_deck:active {
+    white-space: nowrap;
+    background-color: #8f352a;
+    border-top: 4px solid #f07a6b;
+    border-right: 4px solid #f07a6b;
+    border-left: 4px solid #88372c;
+    border-bottom: 4px solid #88372c;
+    transform: scale(0.9);
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition: ease-in-out;
+    transition-property: all;
+    transition-duration: 20ms;
+}
+
+
+/*======================| Images inside of Buttons in Deck Title |=================================*/
+
+.image_delete {
+    width: 15px;
+}
+
+.image_edit {
+    width: 15px;
+}
+
+
+/*======================| Title and Description of Deck |==========================================*/
 
 .body_deck {
     display: flex;
@@ -98,6 +245,24 @@ h2 {
     box-shadow: -6px 6px 6px black;
 }
 
+
+/*======================| Title in Deck Body |========================*/
+
+.body_deck h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/*======================| Description in Deck Body |========================*/
+
+.body_deck p {
+    margin-left: 1rem;
+}
+
+
+/*======================| Container around "Add Deck" Button |=====================================*/
+
 #container_button_add_deck {
     /* background-color: pink; */
     display: flex;
@@ -112,6 +277,9 @@ h2 {
     padding-top: 1.5rem;
 }
 
+
+/*======================| "Add Deck" button |======================================================*/
+
 .button_add_deck {
     border-radius: 100%;
     background-color: rgb(148, 177, 110);
@@ -123,9 +291,15 @@ h2 {
     border-bottom: 10px solid #677456;
 }
 
+
+/*======================| Reaction to hover over "Add Deck" button |===============================*/
+
 .button_add_deck:hover {
     cursor: pointer;
 }
+
+
+/*======================| Reaction to clicking "Add Deck" button |=================================*/
 
 .button_add_deck:active {
     transform: scale(0.8);
@@ -137,10 +311,16 @@ h2 {
     border-bottom: 10px solid #445232;
 }
 
+
+/*======================| Image inside of "Add Deck" button |======================================*/
+
 .image_add_deck {
     width: 150px;
     height: 150px;
 }
+
+
+/*======================| Link of "Add Deck" button to take you to <whatever_url_was_linked> |=====*/
 
 .link_button_add {
     /* background-color: yellow; */
