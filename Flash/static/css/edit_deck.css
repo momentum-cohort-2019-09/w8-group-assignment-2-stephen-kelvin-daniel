@@ -1,0 +1,70 @@
+.container_deck {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 20rem;
+}
+
+
+/*======================| Subject of each Deck |===================================================*/
+
+.title_deck {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    box-shadow: -6px 6px 6px black;
+}
+
+
+/*======================| Title Text in Deck Title |===============================================*/
+
+.title_deck h4 {
+    /* background-color: yellow; */
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.2rem;
+}
+
+.body_deck {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #f4f4f4;
+    padding-top: 0.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 0.5rem;
+    height: 8.5rem;
+    border-top: 0.5px solid rgba(255, 0, 0, 0.564);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: -6px 6px 6px black;
+}
+
+
+/*======================| Title in Deck Body |========================*/
+
+.body_deck h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/*======================| Description in Deck Body |========================*/
+
+.body_deck p {
+    margin-left: 1rem;
+}
