@@ -5,10 +5,7 @@ from Flash.models import User, Deck, Card
 
 @login_required
 def dashboard(request):
-    all_decks = Deck.objects.all()
-    return render(request, "Flash/dashboard.html", {
-        "decks": all_decks,
-    })
+    return render(request, "Flash/dashboard.html")
 
 # Create your views here.
 def testing(request):
