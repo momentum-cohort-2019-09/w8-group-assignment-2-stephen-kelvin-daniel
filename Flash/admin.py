@@ -1,10 +1,13 @@
 from django.contrib import admin
-from Flash.models import Deck, Card
+from Flash.models import Deck, Card, User
 
 
 class CardInline(admin.TabularInline):
     model = Card
     extra = 0
+
+class DeckInLine(admin.TabularInline):
+    model = Deck
 
 
 class DeckAdmin(admin.ModelAdmin):
@@ -31,6 +34,11 @@ class CardAdmin(admin.ModelAdmin):
         'created_at',
     )
 
+class UserAdmin(admin.ModelAdmin):
+    inlines = [
+        DeckInLine,
+    ]
 
 admin.site.register(Deck, DeckAdmin)
 admin.site.register(Card, CardAdmin)
+admin.site.register(User,UserAdmin)
