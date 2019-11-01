@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load staticfiles %} {% block content %} {% block content %}
+{% extends "base.html" %} {% load staticfiles %} {% block content %}
 
 <div class="header_dashboard">
     <h1>Welcome {{ user }}!</h1>
@@ -13,7 +13,7 @@
             </div>
             <div class="container_buttons_deck">
                 <div class="container_button_deck">
-                    <a href="" class="link_button_edit"><button class="button_edit_deck"><img class="image_edit" src="{% static 'assets/icon-edit-white.png' %}"></button></a>
+                    <a href="{% url 'edit_deck' %}" class="link_button_edit"><button class="button_edit_deck"><img class="image_edit" src="{% static 'assets/icon-edit-white.png' %}"></button></a>
                 </div>
                 <div class="container_button_deck">
                     <button class="button_delete_deck"><img class="image_delete" src="{% static 'assets/icon-delete-white.png' %}"></button>

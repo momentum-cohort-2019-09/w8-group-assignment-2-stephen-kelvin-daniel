@@ -1,23 +1,29 @@
 {% extends "base.html" %} {% block content %}
-<h1>Edit deck</h1>
+<h1>Edit Deck</h1>
 
 <body>
     {% csrf_token %}
+
     <form>
-        Answer:<br>
-        <input type="text" name="Answer" value=" ">
-        <br> Question:
-        <br>
+        Question:<br>
         <input type="text" name="Question" value=" ">
+        <br> Answer:
+        <br>
+        <input type="text" name="Answer" value=" ">
         <br><br>
         <input type="submit" value="Submit">
-        <input type="save" value="Save">
+        <a href="{% url 'edit_deck' %}" class="link_button_edit"></button>
+
+
     </form>
 
     <div class="container_deck">
         <div class="title_deck">
             <div>
                 <h4>{{ deck.subject }}</h4>
+            </div>
+            <div>
+
             </div>
 
         </div>
@@ -30,21 +36,19 @@
             </div>
         </div>
     </div>
+    <div id="container">
+        <input type="save" value="Save">
+        <a href="{% url 'edit_deck' %}" class="link_button_edit"></button>
+        </a>
+
+    </div>
+
+    </div>
 
 
 
 
 </body>
-<!-- <div class="container_deck">
-        <div class="title_deck">
-            <div><h4>{{ deck.subject }}</h4></div>
-            
-                
-            
-        </div>
-        <div class="body_deck">
-            <div><h4>{{ deck.title }}</h4></div>
-            <div><p>{{ deck.description }}</p></div>
-        </div> -->
+
 </div>
 {% endblock %}
