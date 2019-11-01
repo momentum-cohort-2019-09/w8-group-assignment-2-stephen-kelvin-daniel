@@ -16,7 +16,7 @@
                     <a href="{% url 'edit_deck' %}" class="link_button_edit"><button class="button_edit_deck"><img class="image_edit" src="{% static 'assets/icon-edit-white.png' %}"></button></a>
                 </div>
                 <div class="container_button_deck">
-                    <button class="button_delete_deck"><img class="image_delete" src="{% static 'assets/icon-delete-white.png' %}"></button>
+                    <button class="button_delete_deck" data-deck-pk="{{ deck.pk }}"><img class="image_delete" data-deck-pk="{{ deck.pk }}" src="{% static 'assets/icon-delete-white.png' %}"></button>
                 </div>
             </div>
         </div>

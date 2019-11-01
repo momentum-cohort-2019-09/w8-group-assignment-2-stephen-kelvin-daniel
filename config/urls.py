@@ -23,10 +23,12 @@ urlpatterns = [
 
 
     # path('', views.dashboard, name="dashboard"),
-    # path('', views.testing, name="testing"),
+    # path('testing/<int:pk>', views.testing, name="testing"),
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('dashboard/', views.dashboard, name="dashboard"),
+    # path('dashboard/', views.DashboardView.as_view(), name="dashboard"),
     path('edit_deck/', views.edit_deck, name='edit_deck'),
+    path('delete_deck/<int:pk>', views.delete_deck, name='delete_deck'),
     path('', views.index_view),
 ]
