@@ -65,14 +65,15 @@ h2 {
     justify-content: flex-start;
     flex-flow: wrap;
     overflow-X: scroll;
-    height: 27.1rem;
+    height: auto;
     padding-top: 0.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
     padding-bottom: 0.5rem;
     margin-top: 0.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    margin-bottom: 1rem;
     border-top: 10px groove #23271f;
     border-left: 10px groove #23271f;
     border-right: 10px groove #5c684c;
@@ -83,7 +84,7 @@ h2 {
 /*======================| Container around each Card |=============================================*/
 
 .container_deck {
-    background-color: pink;
+    /* background-color: pink; */
     display: flex;
     flex-direction: column;
     padding-top: 0.5rem;
