@@ -1,5 +1,7 @@
 # from django.shortcuts import render
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView
+from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from Flash.models import User, Deck, Card
 
@@ -23,8 +25,12 @@ def edit_deck(request):
 
 def index_view(request):
     return render(request, "Flash/index.html")
-# def accounts_login(request):
 
-#     user = request.user
-#     return render(request, "Flash/index.html", {"user": user})
+@csrf_exempt
+def delete_deck(request,pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    if request.method == "POST":
+        deck.delete()
+        return redirect(to='dashboard')
+    return render(request, 'Flash/dashboard.html')
 
