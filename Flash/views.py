@@ -1,6 +1,6 @@
 # from django.shortcuts import render
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import ListView
+from django.views.generic import CreateView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from Flash.models import User, Deck, Card
@@ -34,3 +34,7 @@ def delete_deck(request,pk):
         return redirect(to='dashboard')
     return render(request, 'Flash/dashboard.html')
 
+class AddDeckView(CreateView):
+    model = Deck
+    template_name = "Flash/add_deck.html"
+    fields = ['subject','title','description']
