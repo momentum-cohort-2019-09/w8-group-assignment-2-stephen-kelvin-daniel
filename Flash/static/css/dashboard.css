@@ -198,6 +198,7 @@ h2 {
     transition: ease-in-out;
     transition-property: all;
     transition-duration: 20ms;
+    box-shadow: 0px 0px 20px inset black;
 }
 
 .button_delete_deck:active {
@@ -213,6 +214,7 @@ h2 {
     transition: ease-in-out;
     transition-property: all;
     transition-duration: 20ms;
+    box-shadow: 0px 0px 20px inset black;
 }
 
 
@@ -235,8 +237,8 @@ h2 {
     justify-content: flex-start;
     background-color: #f4f4f4;
     padding-top: 0.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     padding-bottom: 0.5rem;
     height: 8.5rem;
     border-top: 0.5px solid rgba(255, 0, 0, 0.564);
@@ -259,6 +261,59 @@ h2 {
 
 .body_deck p {
     margin-left: 1rem;
+}
+
+
+/*======================| Container around Test Button in Deck Body |=======*/
+
+.container_button_test_deck {
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: -0.1rem;
+    margin-bottom: -0.1rem;
+}
+
+
+/*======================| Test Button in Deck Body |========================*/
+
+.button_test_deck {
+    font-size: 0.7rem;
+    color: black;
+    background-color: #1bcc6b;
+    padding-top: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.2rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-top: 4px solid #51f79c;
+    border-right: 4px solid #51f79c;
+    border-left: 4px solid #1f9454;
+    border-bottom: 4px solid #1f9454;
+    width: 100%;
+}
+
+.button_test_deck:hover {
+    background-color: #65de9b;
+    cursor: pointer;
+}
+
+.button_test_deck:active {
+    white-space: nowrap;
+    background-color: #12934c;
+    border-top: 4px solid #33a165;
+    border-right: 4px solid #33a165;
+    border-left: 4px solid #11502d;
+    border-bottom: 4px solid #11502d;
+    transform: scale(0.9);
+    transform-style: preserve-3d;
+    transform-origin: center;
+    transition: ease-in-out;
+    transition-property: all;
+    transition-duration: 20ms;
+    box-shadow: 0px 0px 20px inset black;
 }
 
 

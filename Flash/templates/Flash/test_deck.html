@@ -1,17 +1,7 @@
+{% extends 'base.html' %}
 {% load staticfiles %}
 
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Testing</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/testing.css' %}">
-</head>
-
-
+{% block content %}
 <body>
     <div class="header_testing">
         <h2>Testing!</h2>
@@ -20,21 +10,23 @@
         <label>
             <input type="checkbox">
             <div class="card">
+                {% for card in deck.all %}
                 <div class="front">
                     <div id="body_front_card">
                         <div class="title_card">Question</div>
-                        <div class="body_card">What year was the War of 1812?</div>
+                        <div class="body_card">{{ card.question }}</div>
                     </div>
                 </div>
                 <div class="back">
                     <div id="body_back_card">
                             <div class="title_card">Answer</div>
-                            <div class="body_card">...1812... what are you? an idiot?</div>
+                            <div class="body_card">{{ card.answer }}</div>
                     </div>
                 </div>
+                {% endfor %}
             </div>       
         </label>
     </div>
 </body>
 
-</html>
+ {% endblock %}

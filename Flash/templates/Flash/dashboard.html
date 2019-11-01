@@ -30,6 +30,9 @@
             <div>
                 <p>{{ deck.description }}</p>
             </div>
+            <div class="container_button_test_deck">
+                    <a href="{% url 'test_deck' pk=deck.pk %}" class="link_button_test"><button class="button_test_deck">Start Testing with this Deck!</button></a>
+            </div>
         </div>
     </div>
     {% endfor %}

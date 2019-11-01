@@ -8,8 +8,8 @@ def dashboard(request):
     return render(request, "Flash/dashboard.html")
 
 # Create your views here.
-def testing(request):
-    return render(request, 'Flash/testing.html')
+def test_deck(request, pk):
+    return render(request, 'Flash/test_deck.html')
 
 # def dashboard(request):
 #     return render(request, 'Flash/dashboard.html')

@@ -85,3 +85,6 @@ class Card(models.Model):
 
     def __str__(self):
         return self.answer
+
+    def __str__(self):
+        return deck.subject
