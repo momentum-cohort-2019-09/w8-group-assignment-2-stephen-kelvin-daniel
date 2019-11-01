@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="page_container">
+<div class="container_block">
+
     {% if user.is_authenticated %}
-    <div class="typewriter">
+
+     <div class="typewriter">
         <h1>I WANT MY FLASHCARDS!</h1>
     </div>
     <a href="{% url 'dashboard' %}">I want my flashcards!</a>
@@ -13,4 +15,5 @@
     <a href="{% url 'auth_login' %}">Login</a> | <a href="{% url 'registration_register' %}">Register</a>
     {% endif %}
 </div>
+
 {% endblock %}
