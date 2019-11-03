@@ -26,8 +26,13 @@ body {
     padding-bottom: 0.5rem;
 }
 
+.header_testing h2 {
+    font-size: 1.7rem;
+}
+
 .title_span {
     color: orange;
+    font-size: 1.5rem;
     text-decoration: underline;
     text-shadow: -5px 2px 4px black;
 }
@@ -328,7 +333,7 @@ body {
     margin-bottom: 1rem;
 }
 
-.button_right {
+#button_right {
     background-color: #20aa20;
     font-size: 0.9rem;
     margin-top: 0;
@@ -344,7 +349,7 @@ body {
     cursor: pointer;
 }
 
-.button_right:hover {
+#button_right:hover {
     background-color: #4bdd4b;
     border-top: 5px solid #51ee51;
     border-left: 5px solid #094709;
@@ -352,7 +357,7 @@ body {
     border-bottom: 5px solid #094709;
 }
 
-.button_right:active {
+#button_right:active {
     background-color: #0f5f0f;
     border-top: 5px solid #369e36;
     border-left: 5px solid #073607;
@@ -366,7 +371,7 @@ body {
     width: 20px;
 }
 
-.button_wrong {
+#button_wrong {
     background-color: #ff0000;
     font-size: 0.9rem;
     margin-top: 0;
@@ -382,7 +387,7 @@ body {
     cursor: pointer;
 }
 
-.button_wrong:hover {
+#button_wrong:hover {
     background-color: #db5151;
     border-top: 5px solid #fa6060;
     border-left: 5px solid #680808;
@@ -390,7 +395,7 @@ body {
     border-bottom: 5px solid #680808;
 }
 
-.button_wrong:active {
+#button_wrong:active {
     background-color: #c71f1f;
     border-top: 5px solid #c44b4b;
     border-left: 5px solid #570808;

@@ -20,6 +20,8 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 10rem;
+    margin-left: 20rem;
+    margin-right: 20rem;
     margin-bottom: auto;
     padding-top: 0.5rem;
     padding-left: 1rem;
@@ -99,11 +101,11 @@ body {
 
 .line1_text {
     /* background-color: red; */
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-align: center;
     margin-top: 0.5rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     padding-top: 0.25rem;
     padding-left: 1rem;
@@ -120,8 +122,8 @@ body {
     font-size: 0.8rem;
     text-align: end;
     margin-top: 0.5rem;
-    margin-left: 3rem;
-    margin-right: 3rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     padding-top: 0.25rem;
     padding-left: 1rem;
