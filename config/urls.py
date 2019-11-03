@@ -18,6 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from Flash import views
 from django.conf.urls import static 
+from django.conf.urls import url 
+
 
 urlpatterns = [
 
@@ -29,6 +31,9 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name="dashboard"),
     # path('add_deck/', views.AddDeckView.as_view(), name="add_deck"),
     path('edit_deck/<int:pk>', views.edit_deck, name='edit_deck'),
+    # path('dashboard/', views.DashboardView.as_view(), name="dashboard"),
+    # path('edit_deck/', views.edit_deck, name='edit_deck'),
+    path('test/<int:pk>', views.test_deck, name="test_deck"),
     path('delete_deck/<int:pk>', views.delete_deck, name='delete_deck'),
     path('', views.index_view),
 ]
