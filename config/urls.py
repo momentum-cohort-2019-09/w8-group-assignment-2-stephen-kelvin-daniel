@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from Flash import views
+<<<<<<< HEAD
+from django.conf.urls import static
+=======
 from django.conf.urls import static 
 from django.conf.urls import url 
 
+>>>>>>> 5de13a31f72de91f2ad336bcb2d94d73e669ae9b
 
 urlpatterns = [
 
@@ -35,5 +39,6 @@ urlpatterns = [
     # path('edit_deck/', views.edit_deck, name='edit_deck'),
     path('test/<int:pk>', views.test_deck, name="test_deck"),
     path('delete_deck/<int:pk>', views.delete_deck, name='delete_deck'),
+    path('dashboard/add_deck/<int:pk>', views.add_deck, name='add_deck'),
     path('', views.index_view),
 ]
