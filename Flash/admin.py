@@ -12,16 +12,18 @@ class DeckInLine(admin.TabularInline):
 
 class DeckAdmin(admin.ModelAdmin):
     list_display = (
-        'subject',
-        'title',
-        'description',
+        'subject', 
+        'title', 
+        'description', 
         'number_of_cards',
         'updated_at',
         'created_at',
     )
     list_filter = (
-        'subject',
-    )
+        'subject', 
+        'title'
+        )
+    search_fields = ['subject', 'title']
 
     inlines = [CardInline]
 

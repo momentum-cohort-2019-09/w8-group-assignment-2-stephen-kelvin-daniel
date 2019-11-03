@@ -1,16 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="page_container">
+<div class="container_block">
+
     {% if user.is_authenticated %}
-    <div class="typewriter">
-        <h1>I WANT MY FLASHCARDS!</h1>
+
+     <div class="typewriter">
+        <h1>Welcome to Flash!</h1>
     </div>
-    <a href="{% url 'dashboard' %}">I want my flashcards!</a>
-    <small class="is-size-7 has-text-grey">Not {{ user }}? <a href="{% url 'auth_logout' %}">Logout</a>.</small>
+    <a href="{% url 'dashboard' %}" class="line1_link"><div class="line1_text">I want my flashcards!</div></a>
+    <div class="line2_text">Not {{ user }}? <a href="{% url 'auth_logout' %}">Logout</a>.</div>
     {% else %}
     <h1>Have an account?</h1>
     <a href="{% url 'auth_login' %}">Login</a> | <a href="{% url 'registration_register' %}">Register</a>
     {% endif %}
 </div>
+
 {% endblock %}

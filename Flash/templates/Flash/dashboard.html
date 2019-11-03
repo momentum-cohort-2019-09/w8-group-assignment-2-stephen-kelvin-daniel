@@ -13,7 +13,7 @@
             </div>
             <div class="container_buttons_deck">
                 <div class="container_button_deck">
-                    <a href="{% url 'edit_deck' %}" class="link_button_edit"><button class="button_edit_deck"><img class="image_edit" src="{% static 'assets/icon-edit-white.png' %}"></button></a>
+                    <a href="{% url 'edit_deck' deck.pk %}" class="link_button_edit"><button class="button_edit_deck"><img class="image_edit" src="{% static 'assets/icon-edit-white.png' %}"></button></a>
                 </div>
                 <div class="container_button_deck">
                     <button class="button_delete_deck" data-deck-pk="{{ deck.pk }}"><img class="image_delete" data-deck-pk="{{ deck.pk }}" src="{% static 'assets/icon-delete-white.png' %}"></button>
@@ -26,6 +26,9 @@
             </div>
             <div>
                 <p>{{ deck.description }}</p>
+            </div>
+            <div class="container_button_test_deck">
+                    <a href="{% url 'test_deck' pk=deck.pk %}" class="link_button_test"><button class="button_test_deck">Start Testing with this Deck!</button></a>
             </div>
         </div>
     </div>
