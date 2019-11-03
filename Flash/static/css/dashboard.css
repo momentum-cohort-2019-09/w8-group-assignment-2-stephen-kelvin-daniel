@@ -32,7 +32,7 @@ body {
 
 .header_dashboard {
     background-color: #353534;
-    border-bottom: 10px groove rgb(41, 41, 41);
+    border-bottom: 10px groove #292929;
     padding-top: 0.5rem;
     padding-left: 1rem;
     padding-right: 1rem;

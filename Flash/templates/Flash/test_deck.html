@@ -4,29 +4,42 @@
 {% block content %}
 <body>
     <div class="header_testing">
-        <h2>Testing!</h2>
+        <h2>Testing <span class="title_span">'{{ deck.title  }}: {{ deck }}'</span></h2>
     </div>
-    <div class="body_testing">
-        <label>
-            <input type="checkbox">
-            <div class="card">
-                {% for card in deck.all %}
-                <div class="front">
-                    <div id="body_front_card">
-                        <div class="title_card">Question</div>
-                        <div class="body_card">{{ card.question }}</div>
-                    </div>
-                </div>
-                <div class="back">
-                    <div id="body_back_card">
-                            <div class="title_card">Answer</div>
-                            <div class="body_card">{{ card.answer }}</div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>       
-        </label>
+    <div class="container_nav_buttons">
+        {% if card_obj.has_previous_card %}
+            <a href="{% url 'test_deck' deck.pk %}?card={{card_obj.get_previous_card.id}}"><button class="nav_button_left" title="Previous Card"><img class="image_nav" src="{% static 'assets/chevron-left.png' %}"></button></a>
+        {% endif %}
+        {% if deck.number_of_cards > 1 %}
+            <a href="{% url 'test_deck' deck.pk %}?card={{deck.get_random_card.id}}"><button class="nav_button_center"><img class="image_nav" src="{% static 'assets/shuffle-icon.png' %}"></button></a>
+        {% endif %}
+        {% if card_obj.has_next_card %}
+            <a href="{% url 'test_deck' deck.pk %}?card={{card_obj.get_next_card.id}}"><button class="nav_button_right" title="Next Card"><img class="image_nav" src="{% static 'assets/chevron-right.png' %}"></button></a>
+        {% endif %}
+    </div>
+    </div>
+    <div id="container">
+        <div id="card">
+        {% comment %} {% for card in deck.cards.all %} {% endcomment %}
+            <div class="front">
+                <h3 class="question_header">Question:</h3>
+                <p class="question_text">{{ card_obj.question }}</p>
+            </div>
+            <div class="back">
+                <h3 class="answer_header">Answer:</h3>
+                <p class="answer_text">{{ card_obj.answer }}</p>
+                <span class="button_control">
+                    <button class="button_right" title="Correct"><img class="image_feedback" src="{% static 'assets/correct-icon.png' %}"></button>
+                    <span class="feedback_text">How'd you do?</span>
+                    <button class="button_wrong" title="WRONG! What would your mother say? How could you do this? ...and to think, after all we've been through... pssh..."><img class="image_feedback" src="{% static 'assets/incorrect-icon.png' %}"></button>
+                </span>
+            </div>
+        {% comment %} {% endfor %} {% endcomment %}
+        </div>
     </div>
 </body>
 
- {% endblock %}
+{% endblock %}
+
+
+

@@ -18,6 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from Flash import views
 from django.conf.urls import static 
+from django.conf.urls import url 
+
 
 urlpatterns = [
 
@@ -27,6 +29,6 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('dashboard/', views.dashboard, name="dashboard"),
     path('edit_deck/', views.edit_deck, name='edit_deck'),
-    path('test/<int:pk>', views.test_deck, name="test_deck"),
+    path('test/<pk>', views.test_deck, name="test_deck"),
     path('', views.index_view),
 ]
