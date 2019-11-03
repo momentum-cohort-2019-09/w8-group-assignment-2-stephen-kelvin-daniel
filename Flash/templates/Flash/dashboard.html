@@ -31,7 +31,7 @@
     </div>
     {% endfor %}
     <div id="container_button_add_deck">
-        <a href="add_deck" class="link_button_add"><button class="button_add_deck">Add Deck</button></a>
+        <a href="{% url 'add_deck' user.pk %}" class="link_button_add"><button class="button_add_deck">Add Deck</button></a>
     </div>
 </div>
 

@@ -6,11 +6,14 @@ from django.contrib.auth.decorators import login_required
 from Flash.models import User, Deck, Card
 from Flash.forms import DeckForm
 
+
 @login_required
 def dashboard(request):
     return render(request, "Flash/dashboard.html")
 
 # Create your views here.
+
+
 def testing(request):
     return render(request, 'Flash/testing.html')
 
@@ -19,30 +22,32 @@ def testing(request):
 
 
 def edit_deck(request):
-    return render(request, 'Flash/edit_deck.html')    
+    return render(request, 'Flash/edit_deck.html')
 
 # @ login_required
 # def index_views(request):
 
+
 def index_view(request):
     return render(request, "Flash/index.html")
 
+
 @csrf_exempt
-def delete_deck(request,pk):
+def delete_deck(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
     if request.method == "POST":
         deck.delete()
         return redirect(to='dashboard')
     return render(request, 'Flash/dashboard.html')
 
-def add_deck(request):
+
+def add_deck(request, pk):
     if request.method == "POST":
         form = DeckForm(request.POST)
         if form.is_valid():
             deck = form.save()
-            return redirect(to=deck)
+            return redirect(to='deck')
     else:
         form = DeckForm()
 
-    return render(request,"Flash/add_deck.html", {"form": form})               
-
+    return render(request, "Flash/add_deck.html", {"form": form})
