@@ -27,8 +27,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('registration.backends.simple.urls')),
     path('dashboard/', views.dashboard, name="dashboard"),
-    path('add_deck/', views.AddDeckView.as_view(), name="add_deck"),
-    path('edit_deck/', views.edit_deck, name='edit_deck'),
+    # path('add_deck/', views.AddDeckView.as_view(), name="add_deck"),
+    path('edit_deck/<int:pk>', views.edit_deck, name='edit_deck'),
     path('delete_deck/<int:pk>', views.delete_deck, name='delete_deck'),
     path('', views.index_view),
 ]

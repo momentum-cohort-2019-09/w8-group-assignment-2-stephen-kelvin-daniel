@@ -3,7 +3,8 @@
 
 {% block content %}
 <form method="post">{% csrf_token %}
-    {{ form.as_p }}
+    {{ deck_form.as_p }}
+    {{ card_formset.as_p }}
     <input type="submit" value="Save">
 </form>
 
