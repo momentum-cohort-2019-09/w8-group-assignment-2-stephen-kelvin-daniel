@@ -10,11 +10,12 @@ document.getElementById('container').addEventListener('click', flip)
 console.log('starting feedback...')
 
 function correct() {
-    console.log('correct clicked!')
+    console.log('correct button clicked!')
 };
 document.getElementById('button_right').addEventListener('click', correct)
 
 function incorrect() {
-    console.log('incorrect clicked!')
+    console.log('incorrect button clicked!')
+
 };
 document.getElementById('button_wrong').addEventListener('click', incorrect)

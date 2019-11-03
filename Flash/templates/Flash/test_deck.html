@@ -34,9 +34,9 @@
                 <h3 class="answer_header">Answer:</h3>
                 <p class="answer_text">{{ card_obj.answer }}</p>
                 <span class="button_control">
-                    <button id="button_right" title="Correct"><img class="image_feedback" src="{% static 'assets/correct-icon.png' %}"></button>
+                    <button id="button_right" value="1" title="Correct"><img class="image_feedback" src="{% static 'assets/correct-icon.png' %}"></button>
                     <span class="feedback_text">How'd you do?</span>
-                    <button id="button_wrong" title="WRONG! What would your mother say? How could you do this? ...and to think, after all we've been through... pssh..."><img class="image_feedback" src="{% static 'assets/incorrect-icon.png' %}"></button>
+                    <button id="button_wrong" value="2" title="WRONG! What would your mother say? How could you do this? ...and to think, after all we've been through... pssh..."><img class="image_feedback" src="{% static 'assets/incorrect-icon.png' %}"></button>
                 </span>
             </div>
         </div>
