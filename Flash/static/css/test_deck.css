@@ -10,6 +10,9 @@ body {
 }
 
 .header_testing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: #4f4d4d;
     color: black;
     font-size: 1.5rem;
@@ -25,6 +28,50 @@ body {
     color: orange;
     text-decoration: underline;
     text-shadow: -5px 2px 4px black;
+}
+
+.nav_button_dashboard {
+    background-color: #20aa20;
+    color: white;
+    position: relative;
+    font-size: 1rem;
+    font-weight: 200;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0.5rem;
+    border-radius: 2rem;
+    border-top: 5px solid #51ee51;
+    border-left: 5px solid #094709;
+    border-right: 5px solid #51ee51;
+    border-bottom: 5px solid #094709;
+    cursor: pointer;
+    box-shadow: -7px 7px 7px rgba(26, 26, 26, 0.842);
+    z-index: 2;
+}
+
+.dashboard_text {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+.nav_button_dashboard:hover {
+    background-color: #4bdd4b;
+    border-top: 5px solid #51ee51;
+    border-left: 5px solid #094709;
+    border-right: 5px solid #51ee51;
+    border-bottom: 5px solid #094709;
+}
+
+.nav_button_dashboard:active {
+    background-color: #0f5f0f;
+    border-top: 5px solid #369e36;
+    border-left: 5px solid #073607;
+    border-right: 5px solid #369e36;
+    border-bottom: 5px solid #073607;
+    transform: scale(0.9);
+    box-shadow: inset 0 0 15px black;
+    box-shadow: inset 0 0 30px #000000e1, -10px 10px 7px #1a1a1ad7;
 }
 
 #container {

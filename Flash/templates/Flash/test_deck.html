@@ -5,6 +5,7 @@
 <body>
     <div class="header_testing">
         <h2>Testing <span class="title_span">'{{ deck.title  }}: {{ deck }}'</span></h2>
+        <a href="{% url 'dashboard' %}"><button class="nav_button_dashboard"><span class="dashboard_text">Back to Dashboard</span></button></a>
     </div>
     <div class="container_nav_buttons">
         {% if card_obj.has_previous_card %}
@@ -20,7 +21,6 @@
     </div>
     <div id="container">
         <div id="card">
-        {% comment %} {% for card in deck.cards.all %} {% endcomment %}
             <div class="front">
                 <h3 class="question_header">Question:</h3>
                 <p class="question_text">{{ card_obj.question }}</p>
@@ -34,7 +34,6 @@
                     <button class="button_wrong" title="WRONG! What would your mother say? How could you do this? ...and to think, after all we've been through... pssh..."><img class="image_feedback" src="{% static 'assets/incorrect-icon.png' %}"></button>
                 </span>
             </div>
-        {% comment %} {% endfor %} {% endcomment %}
         </div>
     </div>
 </body>
