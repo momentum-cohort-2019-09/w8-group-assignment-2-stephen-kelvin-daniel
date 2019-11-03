@@ -1,3 +1,12 @@
+
+
+// for (button of buttons) {
+//     let buttons = document.getElementsByClassName('button_delete_deck');
+//     button.addEventListener('click', function(event) {
+//         event.target.closest('.container_deck').remove();
+//     });
+// };
+
 let buttons = document.getElementsByClassName('button_delete_deck')
 
 function create_delete_buttons(){
@@ -18,3 +27,4 @@ function create_delete_buttons(){
 }
 
 create_delete_buttons()
+
