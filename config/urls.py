@@ -30,5 +30,6 @@ urlpatterns = [
     # path('dashboard/', views.DashboardView.as_view(), name="dashboard"),
     path('edit_deck/', views.edit_deck, name='edit_deck'),
     path('delete_deck/<int:pk>', views.delete_deck, name='delete_deck'),
+    path('dashboard/add_deck', views.add_deck, name='add_deck'),
     path('', views.index_view),
 ]

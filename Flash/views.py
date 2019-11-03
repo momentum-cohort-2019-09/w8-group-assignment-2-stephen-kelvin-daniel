@@ -4,6 +4,7 @@ from django.views.generic import ListView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from Flash.models import User, Deck, Card
+from Flash.forms import DeckForm
 
 @login_required
 def dashboard(request):
@@ -33,4 +34,15 @@ def delete_deck(request,pk):
         deck.delete()
         return redirect(to='dashboard')
     return render(request, 'Flash/dashboard.html')
+
+def add_deck(request):
+    if request.method == "POST":
+        form = DeckForm(request.POST)
+        if form.is_valid():
+            deck = form.save()
+            return redirect(to=deck)
+    else:
+        form = DeckForm()
+
+    return render(request,"Flash/add_deck.html", {"form": form})               
 
