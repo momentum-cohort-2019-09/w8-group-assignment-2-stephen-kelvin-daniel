@@ -100,7 +100,7 @@ class Card(models.Model):
             return False
         return True
 
-    def previous_card(self):
+    def get_previous_card(self):
         return self.deck.cards.filter(id__lt=self.pk).last()
     
     def has_next_card(self):

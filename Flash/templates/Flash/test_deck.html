@@ -8,16 +8,21 @@
         <a href="{% url 'dashboard' %}"><button class="nav_button_dashboard"><span class="dashboard_text">Back to Dashboard</span></button></a>
     </div>
     <div class="container_nav_buttons">
-        {% if card_obj.has_previous_card %}
-            <a href="{% url 'test_deck' deck.pk %}?card={{card_obj.get_previous_card.id}}"><button class="nav_button_left" title="Previous Card"><img class="image_nav" src="{% static 'assets/chevron-left.png' %}"></button></a>
-        {% endif %}
-        {% if deck.number_of_cards > 1 %}
-            <a href="{% url 'test_deck' deck.pk %}?card={{deck.get_random_card.id}}"><button class="nav_button_center"><img class="image_nav" src="{% static 'assets/shuffle-icon.png' %}"></button></a>
-        {% endif %}
-        {% if card_obj.has_next_card %}
-            <a href="{% url 'test_deck' deck.pk %}?card={{card_obj.get_next_card.id}}"><button class="nav_button_right" title="Next Card"><img class="image_nav" src="{% static 'assets/chevron-right.png' %}"></button></a>
-        {% endif %}
-    </div>
+        <div class="container_button">
+            {% if card_obj.has_previous_card %}
+                <a href="{% url 'test_deck' deck.pk %}?card={{card_obj.get_previous_card.id}}"><button class="nav_button_left" title="Previous Card"><img class="image_nav" src="{% static 'assets/chevron-left.png' %}"></button></a>
+            {% endif %}
+        </div>
+        <div class="container_button">
+            {% if deck.number_of_cards > 1 %}
+                <a href="{% url 'test_deck' deck.pk %}?card={{deck.get_random_card.id}}"><button class="nav_button_center" title="Pick a random Card"><img class="image_nav" src="{% static 'assets/shuffle-icon.png' %}"></button></a>
+            {% endif %}
+        </div>
+        <div class="container_button">
+            {% if card_obj.has_next_card %}
+                <a href="{% url 'test_deck' deck.pk %}?card={{card_obj.get_next_card.id}}"><button class="nav_button_right" title="Next Card"><img class="image_nav" src="{% static 'assets/chevron-right.png' %}"></button></a>
+            {% endif %}
+        </div>
     </div>
     <div id="container">
         <div id="card">
