@@ -6,9 +6,9 @@
     {% if user.is_authenticated %}
 
      <div class="typewriter">
-        <h1>I WANT MY FLASHCARDS!</h1>
+        <h1>Welcome to Flash!</h1>
     </div>
-    <a href="{% url 'dashboard' %}"><div class="line1_text">I want my flashcards!</div></a>
+    <a href="{% url 'dashboard' %}" class="line1_link"><div class="line1_text">I want my flashcards!</div></a>
     <div class="line2_text">Not {{ user }}? <a href="{% url 'auth_logout' %}">Logout</a>.</div>
     {% else %}
     <h1>Have an account?</h1>
