@@ -26,8 +26,11 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name="dashboard"),
     path('dashboard/add_deck/<int:pk>', views.add_deck, name='add_deck'),
     path('edit_deck/<int:pk>', views.edit_deck, name='edit_deck'),
+    path('edit_deck/<int:pk>', views.edit_deck, name='edit_deck'),
     path('delete_deck/<int:pk>', views.delete_deck, name='delete_deck'),
     path('test/<int:pk>', views.test_deck, name="test_deck"),
-    path('test_summary/', views.test_summary, name="test_summary"),
+    path('test/<int:pk>/correct_guess', views.correct_guess, name="correct_guess"),
+    path('test/<int:pk>/total_guesses', views.total_guesses, name="total_guesses"),
+    path('test_summary/<int:pk>', views.test_summary, name="test_summary"),
     path('', views.index_view),
 ]
