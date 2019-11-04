@@ -1,8 +1,13 @@
+/*======================| Global Positioning |===============================================*/
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
+
+
+/*======================| Main Body Alignment |===============================================*/
 
 body {
     background-color: #3C4432;
@@ -10,6 +15,9 @@ body {
     flex-direction: column;
     margin: 0px;
 }
+
+
+/*======================| Page Header |===============================================*/
 
 .header_testing {
     display: flex;
@@ -36,6 +44,9 @@ body {
     text-decoration: underline;
     text-shadow: -5px 2px 4px black;
 }
+
+
+/*======================| Dashboard Button in Header |===============================================*/
 
 .nav_button_dashboard {
     background-color: #20aa20;
@@ -81,6 +92,9 @@ body {
     box-shadow: inset 0 0 30px #000000e1, -10px 10px 7px #1a1a1ad7;
 }
 
+
+/*======================| Container around Filp Card |===============================================*/
+
 #container {
     width: 600px;
     height: 400px;
@@ -94,6 +108,9 @@ body {
     justify-content: space-around;
     cursor: default;
 }
+
+
+/*======================| Container around Card Text |===============================================*/
 
 #card {
     width: 95%;
@@ -197,6 +214,9 @@ body {
     padding: 1rem;
 }
 
+
+/*======================| Buttons of Previous/Random/Next |===============================================*/
+
 .container_button {
     /* background-color: yellow; */
     width: 100px;
@@ -282,6 +302,9 @@ body {
     box-shadow: inset 0 0 30px #000000e1, -10px 10px 7px #1a1a1ad7;
 }
 
+
+/*======================| Images in navBar |===============================================*/
+
 .image_nav {
     width: 50px;
 }
@@ -324,6 +347,9 @@ body {
     transform: scale(0.9);
     box-shadow: inset 0 0 30px #000000e1, -10px 10px 7px #1a1a1ad7;
 }
+
+
+/*======================| Buttons in the Card, corrcet/incorrcet |===============================================*/
 
 .button_control {
     /* background-color: lightblue; */

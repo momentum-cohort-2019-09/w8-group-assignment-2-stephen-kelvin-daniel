@@ -1,4 +1,4 @@
-//========================================================================| card flip in <test-deck.html> |============\\
+//================================| card flip in <test-deck.html> |============\\
 console.log('<test_deck> js loaded')
 
 function flip() {
@@ -6,7 +6,7 @@ function flip() {
 };
 document.getElementById('container').addEventListener('click', flip)
 
-//========================================================================| guesses in <test-deck.html> |============\\
+//================================| guesses in <test-deck.html> |============\\
 console.log('starting feedback...')
 
 function correct() {

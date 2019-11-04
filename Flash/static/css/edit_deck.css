@@ -37,6 +37,9 @@
     letter-spacing: 0.2rem;
 }
 
+
+/*======================| Body Text in Deck Description |===============================================*/
+
 .body_deck {
     display: flex;
     flex-direction: column;

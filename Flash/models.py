@@ -2,11 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 import random
 
-
+#======================| USER class |===============================================#
 class User(AbstractUser):
     pass
 
 
+#======================| DECK class |===============================================#
 class Deck(models.Model):
     user = models.ForeignKey(
         to=User,
@@ -58,6 +59,7 @@ class Deck(models.Model):
         return random_card
 
 
+#======================| CARD class |===============================================#
 class Card(models.Model):
     deck = models.ForeignKey(
         to=Deck,

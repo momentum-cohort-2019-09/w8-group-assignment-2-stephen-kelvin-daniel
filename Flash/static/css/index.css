@@ -1,18 +1,29 @@
+/*======================| Global Positioning |===============================================*/
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+
+/*======================| Removing all Hyperlinks' Decoration |===============================================*/
+
 * a {
     text-decoration: none;
 }
+
+
+/*======================| Page's Body alignment |===============================================*/
 
 body {
     background-color: #667456;
     display: flex;
     justify-content: center;
 }
+
+
+/*======================| Main Block, middle screen |===============================================*/
 
 .container_block {
     background-color: #b4dd85;
@@ -34,6 +45,9 @@ body {
     border-bottom: 7px solid #2e3a03;
     animation: 800ms ease-in 0s 1 slideInFromTop
 }
+
+
+/*======================| Keyframes to Bouncing Effect |===============================================*/
 
 @keyframes slideInFromTop {
     0% {
@@ -57,7 +71,7 @@ body {
 }
 
 
-/*=================================================================================================*/
+/*======================| H1 text in Main Block |===============================================*/
 
 .typewriter h1 {
     overflow: hidden;
@@ -75,7 +89,7 @@ body {
 }
 
 
-/* The typing effect */
+/*======================| Keyframes to Typing Effect |===============================================*/
 
 @keyframes typing {
     0% {
@@ -87,7 +101,7 @@ body {
 }
 
 
-/* The typewriter cursor effect */
+/*======================| Keyframes to Typing Cursor |===============================================*/
 
 @keyframes blink-caret {
     0%,
@@ -98,6 +112,9 @@ body {
         border-color: orange;
     }
 }
+
+
+/*======================| Remaining Text in Main Block |===============================================*/
 
 .line1_text {
     /* background-color: red; */
