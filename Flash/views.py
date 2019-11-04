@@ -46,6 +46,7 @@ class DeckForm(ModelForm):
             'user',
             'created_at',
             'updated_at',
+            'is_active',
         ]
 
 
@@ -64,7 +65,7 @@ def edit_deck(request, pk):
     #     return redirect(to='dashboard')
     if request.method == "POST":
         card_formset = DeckFormSet(request.POST, request.FILES, instance=deck)
-        deck_form = DeckForm(reqeust.POST, request.FILES, instance=deck)
+        deck_form = DeckForm(request.POST, request.FILES, instance=deck)
         if card_formset.is_valid() and deck_form.is_valid():
             card_formset.save()
             deck_form.save()
@@ -92,11 +93,14 @@ def delete_deck(request, pk):
 
 
 def add_deck(request, pk):
+    user = get_object_or_404(User,pk=pk)
     if request.method == "POST":
         form = DeckForm(request.POST)
         if form.is_valid():
-            deck = form.save()
-            return redirect(to='deck')
+            deck = form.save(commit=False)
+            deck.user = user
+            deck.save()
+            return redirect(to='dashboard')
     else:
         form = DeckForm()
 
