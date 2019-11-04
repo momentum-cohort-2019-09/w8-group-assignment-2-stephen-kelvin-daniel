@@ -26,18 +26,6 @@ def test_deck(request, pk):
         card_obj = get_object_or_404(Card, pk=request.GET['card'])
     return render(request, 'Flash/test_deck.html', {'deck': deck, 'card_obj': card_obj})
 
-# def viewDeck(request, deck_id):
-#     deck_obj = get_object_or_404(Deck, id=deck_id)
-#     card_list = deck_obj.card_set.all()
-#     card_obj = card_list.first()
-#     if request.method == 'GET' and 'card' in request.GET:
-#         card_obj = get_object_or_404(Card, id=request.GET['card'])
-#     context = {'deck_obj': deck_obj, 'card_obj':card_obj}
-#     return render(request, 'flashcards/viewDeck.html', context)
-
-# def dashboard(request):
-#     return render(request, 'Flash/dashboard.html')
-
 
 class DeckForm(ModelForm):
     class Meta:
@@ -59,10 +47,6 @@ def edit_deck(request, pk):
             'question',
             'answer',
         ])
-    # form = DeckFormSet(request.POST, request.FILES, instance=deck)
-    # if form.is_valid():
-    #     form.save()
-    #     return redirect(to='dashboard')
     if request.method == "POST":
         card_formset = DeckFormSet(request.POST, request.FILES, instance=deck)
         deck_form = DeckForm(request.POST, request.FILES, instance=deck)
@@ -105,3 +89,9 @@ def add_deck(request, pk):
         form = DeckForm()
 
     return render(request, "Flash/add_deck.html", {"form": form})
+
+def test_summary(request, pk):
+    deck = get_error_or_404(Deck, pk=pk)
+    card_obj = get_error_or_404(Card, pk=pk)
+    return render(request, 'Flash/test_summary.html', 
+        {'deck': deck, 'card_obj': card_obj, 'total_guesses': total_guesses.deck, 'total_correct_guesses': total_correct_guesses.deck})
