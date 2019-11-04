@@ -104,6 +104,10 @@ def correct_guess(request, pk):
         card.total_guesses+=1
         card.total_correct_guesses+=1
         card.save()
+        if(card.has_next_card):
+            return render(request, "Flash/test_deck.html",{"deck":card.deck, 'card_obj': card.get_next_card()})
+        else:
+            print("end screen")
 
 @csrf_exempt
 def total_guesses(request, pk):
@@ -111,4 +115,8 @@ def total_guesses(request, pk):
     if request.method == "POST":
         card.total_guesses+=1
         card.save()
+        if(card.has_next_card):
+            return render(request, "Flash/test_deck.html",{"deck":card.deck, 'card_obj': card.get_next_card()})
+        else:
+            print("end screen")
    
