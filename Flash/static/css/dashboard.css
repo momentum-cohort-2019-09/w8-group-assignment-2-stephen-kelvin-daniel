@@ -318,6 +318,10 @@ h2 {
     box-shadow: 0px 0px 20px inset black;
 }
 
+.image_add {
+    width: 75px;
+}
+
 
 /*======================| Container around "Add Deck" Button |=====================================*/
 

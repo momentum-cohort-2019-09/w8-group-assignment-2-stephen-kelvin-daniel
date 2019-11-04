@@ -1,4 +1,3 @@
-# from django.shortcuts import render
 from django.forms import ModelForm, inlineformset_factory
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
@@ -13,7 +12,11 @@ from Flash.forms import DeckForm
 def dashboard(request):
     return render(request, "Flash/dashboard.html")
 
+<<<<<<< HEAD
 #======================| Test Deck Page |===============================================#
+=======
+
+>>>>>>> a629053240726cbf7a5ab02a141fb73a81ed81ed
 def test_deck(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
     card_list = deck.cards.all()
@@ -85,3 +88,35 @@ def add_deck(request, pk):
         form = DeckForm()
 
     return render(request, "Flash/add_deck.html", {"form": form})
+    
+@csrf_exempt
+def test_summary(request, pk):
+    deck = get_error_or_404(Deck, pk=pk)
+    card = get_error_or_404(Card, pk=pk)
+    if request.method == "GET":
+        return render(request, 'Flash/test_summary.html', 
+            {'deck': deck, 'card_obj': card_obj, 'total_guesses': deck.total_guesses, 'total_correct_guesses': deck.total_correct_guesses})
+
+@csrf_exempt
+def correct_guess(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+    if request.method == "POST":
+        card.total_guesses+=1
+        card.total_correct_guesses+=1
+        card.save()
+        if(card.has_next_card):
+            return render(request, "Flash/test_deck.html",{"deck":card.deck, 'card_obj': card.get_next_card()})
+        else:
+            print("end screen")
+
+@csrf_exempt
+def total_guesses(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+    if request.method == "POST":
+        card.total_guesses+=1
+        card.save()
+        if(card.has_next_card):
+            return render(request, "Flash/test_deck.html",{"deck":card.deck, 'card_obj': card.get_next_card()})
+        else:
+            print("end screen")
+   
