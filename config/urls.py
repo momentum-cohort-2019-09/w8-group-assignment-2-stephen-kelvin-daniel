@@ -17,8 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from Flash import views
-from django.conf.urls import static 
-from django.conf.urls import url 
 
 
 urlpatterns = [
