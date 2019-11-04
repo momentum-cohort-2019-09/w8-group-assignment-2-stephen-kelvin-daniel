@@ -9,8 +9,9 @@ document.getElementById('container').addEventListener('click', flip)
 //========================================================================| guesses in <test-deck.html> |============\\
 console.log('starting feedback...')
 
-function correct() {
+function correct(event) {
     console.log('correct button clicked!')
+
 };
 document.getElementById('button_right').addEventListener('click', correct)
 

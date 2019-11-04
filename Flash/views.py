@@ -6,6 +6,8 @@ from django.views.generic import ListView
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from Flash.models import User, Deck, Card
+from Flash.forms import DeckForm
+
 
 @login_required
 def dashboard(request):
@@ -14,6 +16,7 @@ def dashboard(request):
 # def test_deck(request, pk):
 #     deck = get_object_or_404(Deck, pk=pk)
 #     return render(request, 'Flash/test_deck.html', {"deck": deck})
+
 
 def test_deck(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
@@ -34,6 +37,8 @@ def test_deck(request, pk):
 
 # def dashboard(request):
 #     return render(request, 'Flash/dashboard.html')
+
+
 class DeckForm(ModelForm):
     class Meta:
         model = Deck
@@ -41,14 +46,15 @@ class DeckForm(ModelForm):
             'user',
             'created_at',
             'updated_at',
+            'is_active',
         ]
 
 
-def edit_deck(request,pk):
+def edit_deck(request, pk):
     deck = Deck.objects.get(pk=pk)
     DeckFormSet = inlineformset_factory(
-        Deck, 
-        Card, 
+        Deck,
+        Card,
         fields=[
             'question',
             'answer',
@@ -59,7 +65,7 @@ def edit_deck(request,pk):
     #     return redirect(to='dashboard')
     if request.method == "POST":
         card_formset = DeckFormSet(request.POST, request.FILES, instance=deck)
-        deck_form = DeckForm(reqeust.POST,request.FILES,instance=deck)
+        deck_form = DeckForm(request.POST, request.FILES, instance=deck)
         if card_formset.is_valid() and deck_form.is_valid():
             card_formset.save()
             deck_form.save()
@@ -67,25 +73,35 @@ def edit_deck(request,pk):
     else:
         card_formset = DeckFormSet(instance=deck)
         deck_form = DeckForm(instance=deck)
-    return render(request, 'Flash/edit_deck_form.html',{
-        'deck_form':deck_form,
-        'card_formset':card_formset
-        })    
+    return render(request, 'Flash/edit_deck_form.html', {
+        'deck_form': deck_form,
+        'card_formset': card_formset
+    })
 
 
 def index_view(request):
     return render(request, "Flash/index.html")
 
+
 @csrf_exempt
-def delete_deck(request,pk):
+def delete_deck(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
     if request.method == "POST":
         deck.delete()
         return redirect(to='dashboard')
     return render(request, 'Flash/dashboard.html')
 
-# class AddDeckView(CreateView):
-#     model = Deck
-#     self.object.user =
-#     template_name = "Flash/add_deck.html"
-#     fields = ['subject','title','description']
+
+def add_deck(request, pk):
+    user = get_object_or_404(User,pk=pk)
+    if request.method == "POST":
+        form = DeckForm(request.POST)
+        if form.is_valid():
+            deck = form.save(commit=False)
+            deck.user = user
+            deck.save()
+            return redirect(to='dashboard')
+    else:
+        form = DeckForm()
+
+    return render(request, "Flash/add_deck.html", {"form": form})
