@@ -1,4 +1,3 @@
-# from django.shortcuts import render
 from django.forms import ModelForm, inlineformset_factory
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
@@ -13,10 +12,6 @@ from Flash.forms import DeckForm
 def dashboard(request):
     return render(request, "Flash/dashboard.html")
 
-# def test_deck(request, pk):
-#     deck = get_object_or_404(Deck, pk=pk)
-#     return render(request, 'Flash/test_deck.html', {"deck": deck})
-
 
 def test_deck(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
@@ -25,9 +20,6 @@ def test_deck(request, pk):
     if request.method == 'GET' and 'card' in request.GET:
         card_obj = get_object_or_404(Card, pk=request.GET['card'])
     return render(request, 'Flash/test_deck.html', {'deck': deck, 'card_obj': card_obj})
-
-# def dashboard(request):
-#     return render(request, 'Flash/dashboard.html')
 
 
 class DeckForm(ModelForm):
@@ -50,10 +42,6 @@ def edit_deck(request, pk):
             'question',
             'answer',
         ])
-    # form = DeckFormSet(request.POST, request.FILES, instance=deck)
-    # if form.is_valid():
-    #     form.save()
-    #     return redirect(to='dashboard')
     if request.method == "POST":
         card_formset = DeckFormSet(request.POST, request.FILES, instance=deck)
         deck_form = DeckForm(request.POST, request.FILES, instance=deck)
@@ -96,6 +84,14 @@ def add_deck(request, pk):
         form = DeckForm()
 
     return render(request, "Flash/add_deck.html", {"form": form})
+    
+@csrf_exempt
+def test_summary(request, pk):
+    deck = get_error_or_404(Deck, pk=pk)
+    card = get_error_or_404(Card, pk=pk)
+    if request.method == "GET":
+        return render(request, 'Flash/test_summary.html', 
+            {'deck': deck, 'card_obj': card_obj, 'total_guesses': deck.total_guesses, 'total_correct_guesses': deck.total_correct_guesses})
 
 @csrf_exempt
 def correct_guess(request, pk):

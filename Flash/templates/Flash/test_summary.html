@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<body>
+    <div class="header">
+        <div class="header_text"><h2>Test Summary: <br> <span class="title_span">'{{ deck.title  }}: {{ deck }}'</span></h2></div>
+        <div class="dashboard_button">
+            <a href="{% url 'dashboard' %}"><button class="nav_button_dashboard"><span class="dashboard_text">Back to Dashboard</span></button></a>
+        </div>
+    </div>
+    <div class="flex_container">
+        <div class="chart_container">
+            <table class="title_container">
+                <tr>
+                    <th class="chart_title"> Correct Guesses </th>
+                    <th class="chart_title"> Total Guesses </th>
+                </tr>
+                <tr class="body_container">
+                    <td class="chart_body"> 1 </td>
+                    <td class="chart_body"> 5 </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body
+
+{% endblock %}
