@@ -1,8 +1,12 @@
-{% extends "base.html" %} {% load staticfiles %} {% block content %}
+{% extends "base.html" %} 
+{% load staticfiles %} 
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css' %}">
 
 <div class="header_dashboard">
-    <h1>Welcome {{ user }}!</h1>
-    <h2>This is the Dashboard</h2>
+    <h2>Welcome to the Dashboard, {{ user }}!</h2>
+    <a href="{% url 'add_deck' user.pk %}" class="link_button_add"><button class="button_add_deck"><img src="{% static 'assets/icon-add.png' %}" class="image_add"></button></a>
 </div>
 <div class="body_dashboard">
     {% for deck in user.decks.all %}
@@ -33,9 +37,9 @@
         </div>
     </div>
     {% endfor %}
-    <div id="container_button_add_deck">
-        <a href="{% url 'add_deck' user.pk %}" class="link_button_add"><button class="button_add_deck"><img src="{% static 'assets/icon-add.png' %}" class="image_add"></button></a>
-    </div>
+    {% comment %} <div id="container_button_add_deck">
+        
+    </div> {% endcomment %}
 </div>
 
 {% endblock %}

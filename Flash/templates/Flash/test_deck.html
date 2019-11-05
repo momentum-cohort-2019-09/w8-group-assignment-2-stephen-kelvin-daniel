@@ -2,6 +2,8 @@
 {% load staticfiles %}
 
 {% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/test_deck.css' %}">
+
 <body>
     <div class="header_testing">
         <h2>Currently Testing: <br> <span class="title_span">'{{ deck.title  }}: {{ deck }}'</span></h2>

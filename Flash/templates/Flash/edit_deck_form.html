@@ -2,10 +2,28 @@
 {% load staticfiles %}
 
 {% block content %}
-<form method="post">{% csrf_token %}
-    {{ deck_form.as_p }}
-    {{ card_formset.as_p }}
-    <input type="submit" value="Save">
-</form>
+<link rel="stylesheet" type="text/css" href="{% static 'css/edit_deck.css' %}">
+
+<div class="header_edit">
+    <h2>Currently Editing: <br> <span class="title_span">'{{ deck.title  }}: {{ deck }}'</span></h2>
+    <a href="{% url 'dashboard' %}"><button class="nav_button_dashboard"><span class="dashboard_text">Back to Dashboard</span></button></a>
+</div>
+<div class="edit_body_container">
+    <form class="edit_form_container" method="post">
+    {% csrf_token %}
+        <div class="deck_form_container">
+            {{ deck_form.as_p }}
+            <div class="form_button_container">
+                <input type="submit" value="Save!">
+            </div>
+        </div>
+        <div class="card_form_container">
+            {{ card_formset.as_p }}
+        </div>
+        {% comment %} <div class="form_button_container">
+            <input type="submit" value="TEST!">
+        </div> {% endcomment %}
+    </form>
+</div>
 
 {% endblock %}

@@ -12,11 +12,7 @@ from Flash.forms import DeckForm
 def dashboard(request):
     return render(request, "Flash/dashboard.html")
 
-<<<<<<< HEAD
 #======================| Test Deck Page |===============================================#
-=======
-
->>>>>>> a629053240726cbf7a5ab02a141fb73a81ed81ed
 def test_deck(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
     card_list = deck.cards.all()
@@ -57,6 +53,7 @@ def edit_deck(request, pk):
         card_formset = DeckFormSet(instance=deck)
         deck_form = DeckForm(instance=deck)
     return render(request, 'Flash/edit_deck_form.html', {
+        'deck': deck,
         'deck_form': deck_form,
         'card_formset': card_formset
     })

@@ -1,24 +1,30 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<h2>Add a new deck</h2>
+<link rel="stylesheet" type="text/css" href="{% static 'css/add_deck.css' %}">
+<div class="header_add">
+    <h2>Add Deck:</h2>
+    <a href="{% url 'dashboard' %}"><button class="nav_button_dashboard"><span class="dashboard_text">Back to Dashboard</span></button></a>
+</div>
 
-<form action="" method="POST">
-    {% csrf_token %}
+<div class="form_container">
+   <form action="" method="POST">
+      {% csrf_token %}
 
-    {% for field in form %}
-    <div class="input-field {% if field.errors %}input-invalid{% endif %}">
-     {{ field.lable_tag }}
-     {% for error in field.errors %}
-       <div class="text-danger"><small>{{ error }}</small></div>
-    {% endfor %}
+      {% for field in form %}
+         <div class="input-field {% if field.errors %}input-invalid{% endif %}">
+         {{ field.lable_tag }}
+         {% for error in field.errors %}
+            <div class="text-danger"><small>{{ error }}</small></div>
+         {% endfor %}
 
-    {{ field }}
-   </div>
-{% endfor %}
-
- <button type="submit">Add deck</button>
-</form> 
+         {{ field }}
+         </div>
+      {% endfor %}
+      <button type="submit">Add deck</button>
+   </form> 
+</div>
 {% endblock %}
 
         
