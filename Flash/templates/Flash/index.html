@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-{% block content %}
-<div class="container_block">
 
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+<div class="container_block">
     {% if user.is_authenticated %}
 
      <div class="typewriter">
@@ -10,10 +12,24 @@
     </div>
     <a href="{% url 'dashboard' %}" class="line1_link"><div class="line1_text">I want my flashcards!</div></a>
     <div class="line2_text">Not {{ user }}? <a href="{% url 'auth_logout' %}">Logout</a>.</div>
+
     {% else %}
-    <h1>Have an account?</h1>
-    <a href="{% url 'auth_login' %}">Login</a> | <a href="{% url 'registration_register' %}">Register</a>
+        <div class="else_container">
+            <div class="typewriter login_header">
+                <h1>Have an account?</h1>
+            </div>
+            <div class="login_register_container">
+                <div class="login_container">
+                    <a class="login_link" href="{% url 'auth_login' %}">Login</a> 
+                </div>
+                <div class="divider"></div>
+                <div class="register_container">
+                    <a class="register_link" href="{% url 'registration_register' %}">Register</a>
+                </div>
+            </div>
+        </div>
     {% endif %}
+
 </div>
 
 {% endblock %}

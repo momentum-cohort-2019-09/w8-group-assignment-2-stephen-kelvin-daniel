@@ -5,4 +5,4 @@ class DeckForm(forms.ModelForm):
 
     class Meta:
         model = Deck
-        fields = ['subject','title','description']
+        fields = ['subject', 'title','description']
